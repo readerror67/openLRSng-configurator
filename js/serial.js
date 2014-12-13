@@ -99,7 +99,7 @@ var serial = {
                     if (!self.cancel_connect) {
                         self.dtr_rts_timeout = setTimeout(function () {
                             serial.setControlSignals({'dtr': false, 'rts': false}, up);
-                        }, 20);
+                        }, 50);
                     }
                 };
 
@@ -107,7 +107,7 @@ var serial = {
                     if (!self.cancel_connect) {
                         self.dtr_rts_timeout = setTimeout(function () {
                             serial.setControlSignals({'dtr': true, 'rts': true}, done);
-                        }, 20);
+                        }, 50);
                     }
                 };
 

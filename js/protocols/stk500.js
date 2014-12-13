@@ -207,7 +207,7 @@ STK500_protocol.prototype.initialize = function () {
 
                         GUI.timeout_add('initialization_timeout', function () {
                             self.connect(self.hex);
-                        }, 200); // timeout so bus have time to recover
+                        }, 100); // timeout so bus have time to recover
                     });
                 } else {
                     GUI.connect_lock = false;
@@ -224,7 +224,7 @@ STK500_protocol.prototype.initialize = function () {
                 self.upload_procedure(99);
             }
         }
-    }, (!this.optiboot) ? 250 : 450); // initial sync timeout needs to be rather long for optiboot otherwise communication will fail
+    }, (!this.optiboot) ? 100 : 250); // initial sync timeout needs to be rather long for optiboot otherwise communication will fail
 };
 
 STK500_protocol.prototype.verify_chip_signature = function(high, mid, low) {
